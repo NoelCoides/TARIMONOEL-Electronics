@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>TARIMONOEL Electronics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.lson">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.servicWorker.register('service-Worker.js')
+                .then(() =>
+                    console.log("Service Workre Rrgistered"))
+                .catch(err =>
+                    console.log("Service Worker failed:", err))
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>TARIMONOEL Elecronics</h1>
+        <nav>
+            <ul>
+                <li><a href="#products">Products</a>
+                </li>
+                <li>
+                    <<a href="#checkout">Checkout</a>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="banner">
+        <h2>Karibu TARIMONOEL Elecronics</h2>
+        <p>Vifaa bora vya umeme kwa bei nafuu</p>
+    </section>
+    <section id="products" class="products">
+        <h2>Bidhaa zetu</h2>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Laptop">
+            <h3>Laptop HP</h3>
+            <p>Bei: Tsh 800,000</p>
+            <button onclick="selectProduct('Laptop HP')">Nunua sasa</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Smartphone">
+            <h3>Smartphone Sumsung</h3>
+            <p>Bei: Tsh500,000</p>
+            <button onclick="selectProduct('Smartphone Sumsung')">Nunua sasa</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Headphones">
+            <h3>Headphones</h3>
+            <p>Bei: Tsh80,000</p>
+            <button onclick="selectProduct('Headphones')">Nunua sasa</button>
+        </div>
+    </section>
+    <section id="checkout" class="checkout">
+        <h2>Checkout</h2>
+        <form>
+            <label>Jina lako:</label>
+            <input type="text" placeholder="Ingiza jina lako" required>
+            <label>Namba ya simu:</label>
+            <input type="tel" placeholder="+255..." required>
+            <label>Bidhaa uliyochagua:</label>
+            <input type="text" id="selected-product" readonly>
+            <label>Anuani ya uwasilishaji:</label>
+            <textarea placeholder="Andika anuani yako"></textarea>
+            <button type="submit">Tuma Oda</button>
+        </form>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Wasiliana nasi</h2>
+        <p>Simu:+255 617 284973</p>
+        <p>Email:tarimonoel318@gmail.com</p>
+    </section>
+    <footer>
+        <p>&copy: 2025 TARIMONOEL Elecronics. Mteja Kwetu ni Mfalme</p>
+    </footer>
+    <script>
+        selectProduct(productName) {
+            document.getElementById('selected-product').value = productName;
+            window.locatino.href = "#chechout";
+        }
+    </script>
+</body>
+
+</html>
